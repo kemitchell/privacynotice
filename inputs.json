@@ -40,5 +40,14 @@
       "type": "string",
       "format": "uri"
     }
+  },
+  {
+    "identifier": "Date",
+    "label": "Privacy Notice Date",
+    "comment": "The date of the last update to the privacy notice.",
+    "schema": {
+      "type": "string",
+      "format": "date-time"
+    }
   }
 ]
