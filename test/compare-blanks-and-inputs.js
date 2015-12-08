@@ -31,8 +31,15 @@ var formBlanks = parse(markup)
     return !array.some(function(otherElement) {
       return equal(element, otherElement.slice(0, -1)) }) })
 
+function flatten(result, element) {
+  return result.concat(element) }
+
 var inputs = require('../inputs')
-  .map(function(input) { return input.identifier })
+  .map(function(section) {
+    return section
+      .inputs
+      .map(function(input) { return input.identifier }) })
+  .reduce(flatten, [ ])
   .sort(bySerialization)
 
 assert.deepEqual(formBlanks, inputs)

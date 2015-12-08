@@ -1,155 +1,165 @@
 [
   {
-    "identifier": [
-      "Company Name"
-    ],
-    "label": "Company Name",
-    "comment": "The name of the company that operates the website.",
-    "schema": {
-      "type": "string",
-      "pattern": "^[\\x20-\\x7E]*$",
-      "minLength": 3
-    },
-    "hints": [
-      "Use the legal name of the company. That names probably ends with \"LLC\", \"Inc.\", or another word indicating what kind of legal entity it is."
+    "section": "General",
+    "inputs": [
+      {
+        "identifier": [
+          "Company Name"
+        ],
+        "label": "Company Name",
+        "comment": "The name of the company that operates the website.",
+        "schema": {
+          "type": "string",
+          "pattern": "^[\\x20-\\x7E]*$",
+          "minLength": 3
+        },
+        "hints": [
+          "Use the legal name of the company. That names probably ends with \"LLC\", \"Inc.\", or another word indicating what kind of legal entity it is."
+        ]
+      },
+      {
+        "identifier": [
+          "Website URL"
+        ],
+        "label": "Website URL",
+        "comment": "The URL of the website.",
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        },
+        "hints": [
+          "If your website has its own domain name, like www.yourwebsite.com, use URL for its homepage, like http://www.yourwebsite.com."
+        ]
+      },
+      {
+        "identifier": [
+          "Privacy Notice URL"
+        ],
+        "label": "Notice URL",
+        "comment": "The URL where the privacy notice will be posted.",
+        "schema": {
+          "type": "string",
+          "pattern": "^[\\x20-\\x7E]*$",
+          "format": "uri"
+        }
+      },
+      {
+        "identifier": [
+          "Privacy Notice History URL"
+        ],
+        "label": "Notice History URL",
+        "comment": "The URL where users can view old versios of the privacy notice.",
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      {
+        "identifier": [
+          "Date"
+        ],
+        "label": "Privacy Notice Date",
+        "comment": "The date of the last update to the privacy notice.",
+        "schema": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
     ]
   },
   {
-    "identifier": [
-      "Website URL"
-    ],
-    "label": "Website URL",
-    "comment": "The URL of the website.",
-    "schema": {
-      "type": "string",
-      "format": "uri"
-    },
-    "hints": [
-      "If your website has its own domain name, like www.yourwebsite.com, use URL for its homepage, like http://www.yourwebsite.com."
+    "section": "Collection",
+    "inputs": [
+      {
+        "identifier": [
+          "Collects Personally Identifiable Information",
+          "Names"
+        ],
+        "label": "Collect Names?",
+        "comment": "Does the website collect the first or last names of users?",
+        "predicate": "Collects Personally Identifiable Information",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      {
+        "identifier": [
+          "Collects Personally Identifiable Information",
+          "Addresses"
+        ],
+        "label": "Collect Addresses?",
+        "comment": "Does the website collect home or other physical addresses, with street name and city or town name?",
+        "predicate": "Collects Personally Identifiable Information",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      {
+        "identifier": [
+          "Collects Personally Identifiable Information",
+          "E-Mail Addresses"
+        ],
+        "label": "Collect E-Mail Addresses?",
+        "comment": "Does the website collect e-mail addresses?",
+        "predicate": "Collects Personally Identifiable Information",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      {
+        "identifier": [
+          "Collects Personally Identifiable Information",
+          "Telephone Numbers"
+        ],
+        "label": "Collect Telephone Numbers?",
+        "comment": "Does the website collect telephone numbers?",
+        "predicate": "Collects Personally Identifiable Information",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      {
+        "identifier": [
+          "Collects Personally Identifiable Information",
+          "Social Security Numbers"
+        ],
+        "label": "Collect Social Security Numbers?",
+        "comment": "Does the website collect social security numbers?",
+        "predicate": "Collects Personally Identifiable Information",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      {
+        "identifier": [
+          "Collects Personally Identifiable Information",
+          "Other Identifiers",
+          "Description"
+        ],
+        "label": "Collect Other Identifiers?",
+        "comment": "Does the website collect other information that could be used to contact specific individuals online or offline?",
+        "predicate": "Collects Personally Identifiable Information",
+        "schema": {
+          "type": "string",
+          "pattern": "^[\\x20-\\x7E]*$",
+          "minLength": 1
+        }
+      },
+      {
+        "identifier": [
+          "Collects Personally Identifiable Information",
+          "Combined Information",
+          "Description"
+        ],
+        "label": "Collect Combined Information?",
+        "comment": "Does the website collect other information about users that is stored with or combined with other personal information about them?",
+        "predicate": "Collects Personally Identifiable Information",
+        "schema": {
+          "type": "string",
+          "pattern": "^[\\x20-\\x7E]*$",
+          "minLength": 1
+        }
+      }
     ]
-  },
-  {
-    "identifier": [
-      "Privacy Notice URL"
-    ],
-    "label": "Notice URL",
-    "comment": "The URL where the privacy notice will be posted.",
-    "schema": {
-      "type": "string",
-      "pattern": "^[\\x20-\\x7E]*$",
-      "format": "uri"
-    }
-  },
-  {
-    "identifier": [
-      "Privacy Notice History URL"
-    ],
-    "label": "Notice History URL",
-    "comment": "The URL where users can view old versios of the privacy notice.",
-    "schema": {
-      "type": "string",
-      "format": "uri"
-    }
-  },
-  {
-    "identifier": [
-      "Date"
-    ],
-    "label": "Privacy Notice Date",
-    "comment": "The date of the last update to the privacy notice.",
-    "schema": {
-      "type": "string",
-      "format": "date-time"
-    }
-  },
-  {
-    "identifier": [
-      "Collects Personally Identifiable Information",
-      "Names"
-    ],
-    "label": "Collect Names?",
-    "comment": "Does the website collect the first or last names of users?",
-    "predicate": "Collects Personally Identifiable Information",
-    "schema": {
-      "type": "boolean"
-    }
-  },
-  {
-    "identifier": [
-      "Collects Personally Identifiable Information",
-      "Addresses"
-    ],
-    "label": "Collect Addresses?",
-    "comment": "Does the website collect home or other physical addresses, with street name and city or town name?",
-    "predicate": "Collects Personally Identifiable Information",
-    "schema": {
-      "type": "boolean"
-    }
-  },
-  {
-    "identifier": [
-      "Collects Personally Identifiable Information",
-      "E-Mail Addresses"
-    ],
-    "label": "Collect E-Mail Addresses?",
-    "comment": "Does the website collect e-mail addresses?",
-    "predicate": "Collects Personally Identifiable Information",
-    "schema": {
-      "type": "boolean"
-    }
-  },
-  {
-    "identifier": [
-      "Collects Personally Identifiable Information",
-      "Telephone Numbers"
-    ],
-    "label": "Collect Telephone Numbers?",
-    "comment": "Does the website collect telephone numbers?",
-    "predicate": "Collects Personally Identifiable Information",
-    "schema": {
-      "type": "boolean"
-    }
-  },
-  {
-    "identifier": [
-      "Collects Personally Identifiable Information",
-      "Social Security Numbers"
-    ],
-    "label": "Collect Social Security Numbers?",
-    "comment": "Does the website collect social security numbers?",
-    "predicate": "Collects Personally Identifiable Information",
-    "schema": {
-      "type": "boolean"
-    }
-  },
-  {
-    "identifier": [
-      "Collects Personally Identifiable Information",
-      "Other Identifiers",
-      "Description"
-    ],
-    "label": "Collect Other Identifiers?",
-    "comment": "Does the website collect other information that could be used to contact specific individuals online or offline?",
-    "predicate": "Collects Personally Identifiable Information",
-    "schema": {
-      "type": "string",
-      "pattern": "^[\\x20-\\x7E]*$",
-      "minLength": 1
-    }
-  },
-  {
-    "identifier": [
-      "Collects Personally Identifiable Information",
-      "Combined Information",
-      "Description"
-    ],
-    "label": "Collect Combined Information?",
-    "comment": "Does the website collect other information about users that is stored with or combined with other personal information about them?",
-    "predicate": "Collects Personally Identifiable Information",
-    "schema": {
-      "type": "string",
-      "pattern": "^[\\x20-\\x7E]*$",
-      "minLength": 1
-    }
   }
 ]
