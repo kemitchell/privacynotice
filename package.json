@@ -1,5 +1,6 @@
-{ "private": true,
+{
+  "private": true,
   "devDependencies": {
-    "tv4": "^1.2.7" },
-  "scripts": {
-    "test": "node validate.js" } }
+    "tv4": "^1.2.7"
+  }
+}

@@ -1,3 +1,9 @@
 language: "node_js"
 node_js: "node"
 sudo: false
+script: 'sh test.sh'
+addons:
+  apt:
+    packages:
+      - 'aspell'
+      - 'aspell-en'
