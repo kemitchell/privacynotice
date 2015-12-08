@@ -39,7 +39,10 @@
     "schema": {
       "type": "string",
       "format": "uri"
-    }
+    },
+    "hints": [
+      "If you use a GitHub repository like https://github.com/myco/privacy to track changes to your privacy notice, you might answer \"https://github.com/myco/privacy/releases\" and mark each revision of the notice that you publish as a Git tag."
+    ]
   },
   {
     "identifier": "Date",
