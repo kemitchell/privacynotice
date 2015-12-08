@@ -1,11 +1,7 @@
-var tv4 = require('tv4')
+var assert = require('assert')
 var inputs = require('./inputs.json')
 var schema = require('./schema.json')
-var result = tv4.validateMultiple(inputs, schema)
+var tv4 = require('tv4')
 
-if (result.valid) {
-  process.exit(0) }
-else {
-  result.errors.forEach(function(error) {
-    console.error(error) })
-  process.exit(1) }
+var result = tv4.validateMultiple(inputs, schema)
+assert.deepEqual(result.errors, [ ])
