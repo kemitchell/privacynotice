@@ -77,7 +77,6 @@
         ],
         "label": "Collect Names?",
         "comment": "Does the website collect the first or last names of users?",
-        "predicate": "Collects Personally Identifiable Information",
         "schema": {
           "type": "boolean"
         }
@@ -89,7 +88,6 @@
         ],
         "label": "Collect Addresses?",
         "comment": "Does the website collect home or other physical addresses, with street name and city or town name?",
-        "predicate": "Collects Personally Identifiable Information",
         "schema": {
           "type": "boolean"
         }
@@ -101,7 +99,6 @@
         ],
         "label": "Collect E-Mail Addresses?",
         "comment": "Does the website collect e-mail addresses?",
-        "predicate": "Collects Personally Identifiable Information",
         "schema": {
           "type": "boolean"
         }
@@ -113,7 +110,6 @@
         ],
         "label": "Collect Telephone Numbers?",
         "comment": "Does the website collect telephone numbers?",
-        "predicate": "Collects Personally Identifiable Information",
         "schema": {
           "type": "boolean"
         }
@@ -125,7 +121,6 @@
         ],
         "label": "Collect Social Security Numbers?",
         "comment": "Does the website collect social security numbers?",
-        "predicate": "Collects Personally Identifiable Information",
         "schema": {
           "type": "boolean"
         }
@@ -138,7 +133,6 @@
         ],
         "label": "Collect Other Identifiers?",
         "comment": "Does the website collect other information that could be used to contact specific individuals online or offline?",
-        "predicate": "Collects Personally Identifiable Information",
         "schema": {
           "type": "string",
           "pattern": "^[\\x20-\\x7E]*$",
@@ -153,7 +147,6 @@
         ],
         "label": "Collect Combined Information?",
         "comment": "Does the website collect other information about users that is stored with or combined with other personal information about them?",
-        "predicate": "Collects Personally Identifiable Information",
         "schema": {
           "type": "string",
           "pattern": "^[\\x20-\\x7E]*$",
