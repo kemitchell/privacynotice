@@ -1,0 +1,26 @@
+[
+  {
+    "identifier": "Company Name",
+    "label": "Company Name",
+    "comment": "The name of the company that operates the website.",
+    "schema": {
+      "type": "string",
+      "minLength": 3
+    },
+    "hints": [
+      "Use the legal name of the company. That names probably ends with \"LLC\", \"Inc.\", or another word indicating what kind of legal entity it is."
+    ]
+  },
+  {
+    "identifier": "Website URL",
+    "label": "Website URL",
+    "comment": "The URL of the website.",
+    "schema": {
+      "type": "string",
+      "format": "uri"
+    },
+    "hints": [
+      "If your website has its own domain name, like www.yourwebsite.com, use URL for its homepage, like http://www.yourwebsite.com."
+    ]
+  }
+]
