@@ -1,5 +1,34 @@
+# Set the Mustache delimiter to something that doesn't conflict with Common Form markup syntax.
+# {{=(( ))=}}
+
 This is the public privacy notice for [Website URL], a website operated by [Company Name]. This notice describes what data the website collects, why it is collected, and what is done with it.
 
     \ Last Updated \ This privacy notice was last updated [Date].
 
     \ Changes \ If we change this privacy policy in the future, we will post the new version at [Privacy Notice URL] with a new "last updated" date. If the changes are significant, we will give more prominent notice, such as by sending users e-mail or showing an alert on the website. You can review old versions of this privacy notice at [Privacy Notice History URL].
+
+    # See California Business and Professions Code 22575(b)(1).
+    # ((#Collects Personally Identifiable Information))
+    \ Information the Website Collects \ The website collects the following kinds of personally identifiable information:
+        # ((#Names))
+        \\ users' names
+        # ((/Names))
+        # ((#Addresses))
+        \\ users' addresses
+        # ((/Addresses))
+        # ((#E-Mail Addresses))
+        \\ users' e-mail addresses
+        # ((/E-Mail Addresses))
+        # ((#Telephone Numbers))
+        \\ users' telephone numbers
+        # ((/Telephone Numbers))
+        # ((#Social Security Numbers))
+        \\ users' Social Security Numbers
+        # ((/Social Security Numbers))
+        # ((#Other Identifiers))
+        \\ ((&Description))
+        # ((/Other Identifiers))
+        # ((#Combined Information))
+        \\ ((&Description))
+        # ((/Combined Information))
+    # ((/Collects Personally Identifiable Information))

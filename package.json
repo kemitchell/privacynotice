@@ -2,6 +2,8 @@
   "private": true,
   "devDependencies": {
     "commonform-markup-parse": "^0.2.0",
+    "deep-equal": "^1.0.1",
+    "mustache-vars": "^0.2.0",
     "tv4": "^1.2.7"
   },
   "scripts": {
