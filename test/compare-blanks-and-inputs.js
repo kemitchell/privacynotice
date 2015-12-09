@@ -1,9 +1,11 @@
 var assert = require('assert')
-var equal = require('deep-equal')
 var fs = require('fs')
-var parse = require('commonform-markup-parse')
+var parseMarkup = require('commonform-markup-parse')
+var parseTemplate = require('plaintemplate-parse')
 var path = require('path')
-var vars = require('mustache-vars')
+var uniq = require('uniq')
+
+var templating = require('../templating.json')
 
 function bySerialization(a, b) {
   a = JSON.stringify(a)
@@ -15,21 +17,32 @@ function bySerialization(a, b) {
 var form = path.join(__dirname, '..', 'notice.cform')
 var markup = fs.readFileSync(form).toString()
 
-var formBlanks = parse(markup)
-  .directions
-  .map(function(direction) { return [ direction.identifier ] })
-  .concat(
-    vars(markup).map(function(variable) {
-      return variable.split('\t') }))
-  .sort(bySerialization)
-  // If there are, say,
-  // [ "Collects PII" ]
-  // [ "Collects PII", "Combined Information" ]
-  // [ "Collects PII", "Combined Information", "Description" ]
-  // then filter out the first two.
-  .filter(function(element, index, array) {
-    return !array.some(function(otherElement) {
-      return equal(element, otherElement.slice(0, -1)) }) })
+var formBlanks = uniq(
+  [ ]
+    .concat(
+      parseMarkup(markup)
+      .directions
+      .map(function(direction) { return direction.identifier }))
+    .concat(templateVars(parseTemplate(markup, templating)))
+    .sort(bySerialization))
+
+function tagVar(tag) {
+  return tag.substring(tag.indexOf(' ') + 1) }
+
+function templateVars(content, vars) {
+  if (vars === undefined) {
+    vars = [ ] }
+  return content.reduce(
+    function(vars, token) {
+      if ('text' in token) {
+        return vars }
+      else {
+        var tag = token.tag
+        vars.push(tagVar(tag))
+        if ('content' in token) {
+          templateVars(token.content, vars) }
+        return vars } },
+    vars) }
 
 function flatten(result, element) {
   return result.concat(element) }
