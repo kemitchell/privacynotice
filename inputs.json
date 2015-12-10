@@ -40,8 +40,8 @@
         "comment": "Does the website collect the first or last names of users?",
         "schema": {
           "type": "boolean" } },
-      { "identifier": "Addresses",
-        "label": "Collect Addresses?",
+      { "identifier": "Physical Addresses",
+        "label": "Collect Physical Addresses?",
         "comment": "Does the website collect home or other physical addresses, with street name and city or town name?",
         "schema": {
           "type": "boolean" } },
