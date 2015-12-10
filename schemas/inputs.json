@@ -1,0 +1,42 @@
+{ "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "section": {
+        "type": "string",
+        "minLength": 1 },
+      "inputs": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "oneOf": [
+            { "type": "object",
+              "required": [ "identifier", "derivation" ],
+              "additionalProperties": false,
+              "properties": {
+                "identifier": {
+                  "type": "string" },
+                "derivation": {
+                  "type": "object" } } },
+            { "type": "object",
+              "required": [ "identifier", "label", "comment", "schema" ],
+              "properties": {
+                "identifier": {
+                  "type": "string" },
+                "label": {
+                  "type": "string",
+                  "minLength": 1 },
+                "comment": {
+                  "type": "string",
+                  "minLength": 1 },
+                "hints": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1 },
+                  "minItems": 1 },
+                "schema": {
+                  "$ref": "http://json-schema.org/draft-04/schema#" } } } ] } } } } }

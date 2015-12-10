@@ -1,35 +1,26 @@
 var assert = require('assert')
-var equal = require('deep-equal')
-var fs = require('fs')
-var parse = require('commonform-markup-parse')
-var path = require('path')
-var vars = require('mustache-vars')
+var booleanVariables = require('boolean-json-variables')
 
-function bySerialization(a, b) {
-  a = JSON.stringify(a)
-  b = JSON.stringify(b)
-  if (a < b) { return -1 }
-  else if (a > b) { return 1 }
-  else { return 0 } }
+var terms = require('../terms')
 
-var form = path.join(__dirname, '..', 'notice.cform')
-var markup = fs.readFileSync(form).toString()
+function recurseTerms(formish, variables) {
+  return formish.content.reduce(
+    function(variables, element) {
+      if (typeof element === 'object') {
+        if ('insert' in element) {
+          variables.push(element.insert) }
+        if ('condition' in element) {
+          booleanVariables(element.condition).forEach(function(variable) {
+            variables.push(variable) }) }
+        if ('form' in element) {
+          recurseTerms(element.form, variables) } }
+      return variables },
+    variables)  }
 
-var formBlanks = parse(markup)
-  .directions
-  .map(function(direction) { return [ direction.identifier ] })
-  .concat(
-    vars(markup).map(function(variable) {
-      return variable.split('\t') }))
-  .sort(bySerialization)
-  // If there are, say,
-  // [ "Collects PII" ]
-  // [ "Collects PII", "Combined Information" ]
-  // [ "Collects PII", "Combined Information", "Description" ]
-  // then filter out the first two.
-  .filter(function(element, index, array) {
-    return !array.some(function(otherElement) {
-      return equal(element, otherElement.slice(0, -1)) }) })
+var inTerms = recurseTerms(terms, [ ]).sort().reduce(unique, [ ])
+
+function unique(result, element) {
+  return ( result.indexOf(element) > -1 ? result : result.concat(element) ) }
 
 function flatten(result, element) {
   return result.concat(element) }
@@ -40,6 +31,6 @@ var inputs = require('../inputs')
       .inputs
       .map(function(input) { return input.identifier }) })
   .reduce(flatten, [ ])
-  .sort(bySerialization)
+  .sort()
 
-assert.deepEqual(formBlanks, inputs)
+assert.deepEqual(inTerms, inputs)

@@ -1,0 +1,64 @@
+{ "$schema": "http://json-schema.org/draft-04/schema#",
+  "boolean": {
+    "conjunction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "and" ],
+      "properties": {
+        "and": {
+          "type": "array",
+          "items": {
+            "$ref": "#/boolean/expression" } } } },
+    "disjunction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "or" ],
+      "properties": {
+        "or": {
+          "type": "array",
+          "items": {
+            "$ref": "#/boolean/expression" } } } },
+    "negation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "not" ],
+      "properties": {
+        "not": {
+          "$ref": "#/boolean/expression" } } },
+    "expression": {
+      "oneOf": [
+        { "type": "string" },
+        { "$ref": "#/boolean/conjunction" },
+        { "$ref": "#/boolean/disjunction" },
+        { "$ref": "#/boolean/negation" } ] } },
+  "content": {
+    "insert": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "insert": {
+          "type": "string" } },
+      "required": [ "insert" ] },
+    "child": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "condition": {
+          "$ref": "#/boolean/expression" },
+        "heading": {
+          "type": "string" },
+        "form": {
+          "$ref": "#" } },
+      "required": [ "form" ] } },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [ "content" ],
+  "properties": {
+    "content": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          { "type": "string" },
+          { "$ref": "#/content/insert" },
+          { "$ref": "#/content/child" } ] } } } }
