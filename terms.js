@@ -44,6 +44,3 @@ module.exports = {
             form: { content: [ { insert: 'Other Identifiers' } ] } },
           { condition: 'Combined Information',
             form: { content: [ { insert: 'Combined Information' } ] } } ] } } ] }
-
-if (!module.parent) {
-  process.stdout.write(require('lispy-json')(module.exports) + '\n') }
