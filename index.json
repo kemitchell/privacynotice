@@ -1,0 +1,133 @@
+{ "terms": {
+    "content": [
+      "This is the public privacy notice for ",
+      { "insert": "Website URL" },
+      ", a website operated by ",
+      { "insert": "Company Name" },
+      ". This notice describes what data the website collects, why it is collected, and what is done with it.",
+      { "heading": "Last Updated",
+        "form": {
+          "content": [
+            "This privacy notice was last updated ",
+            { "insert": "Date" },
+            "." ] } },
+      { "heading": "Changes",
+        "form": {
+          "content": [
+            "If we change this privacy policy in the future, we will post the new version at ",
+            { "insert": "Privacy Notice URL" },
+            " with a new \"last updated\" date. If the changes are significant, we will give more prominent notice, such as by sending users e-mail or showing an alert on the website. You can review old versions of this privacy notice at ",
+            { "insert": "Privacy Notice History URL" },
+            "." ] } },
+      { "comment": "See California Business and Professions Code 22575(b)(1)",
+        "condition": "Collects Personally Identifiable Information",
+        "heading": "Information the Website Collects",
+        "form": {
+          "content": [
+            "The website collects the following kinds of personally identifiable information:",
+            { "condition": "Names",
+              "form": {
+                "content": [ "users' names" ] } },
+            { "condition": "Physical Addresses",
+              "form": {
+                "content": [ "users' physical addresses" ] } },
+            { "condition": "E-Mail Addresses",
+              "form": {
+                "content": [ "users' e-mail addresses" ] } },
+            { "condition": "Telephone Numbers",
+              "form": {
+                "content": [ "users' telephone numbers" ] } },
+            { "condition": "Social Security Numbers",
+              "form": {
+                "content": [ "users' Social Security Numbers" ] } },
+            { "condition": "Other Identifiers",
+              "form": {
+                "content": [
+                  { "insert": "Other Identifiers" } ] } },
+            { "condition": "Combined Information",
+              "form": {
+                "content": [
+                  { "insert": "Combined Information" } ] } } ] } } ] },
+  "inputs": [
+    { "section": "General",
+      "inputs": [
+        { "identifier": "Company Name",
+          "label": "Company Name",
+          "comment": "The name of the company that operates the website.",
+          "schema": {
+            "type": "string",
+            "pattern": "^[\\x20-\\x7E]+$",
+            "minLength": 3 },
+          "hints": [ "Use the legal name of the company. That names probably ends with \"LLC\", \"Inc.\", or another word indicating what kind of legal entity it is." ] },
+        { "identifier": "Website URL",
+          "label": "Website URL",
+          "comment": "The URL of the website.",
+          "schema": {
+            "type": "string",
+            "format": "uri" },
+          "hints": [ "If your website has its own domain name, like www.yourwebsite.com, use URL for its homepage, like http://www.yourwebsite.com." ] },
+        { "identifier": "Privacy Notice URL",
+          "label": "Notice URL",
+          "comment": "The URL where the privacy notice will be posted.",
+          "schema": {
+            "type": "string",
+            "format": "uri" } },
+        { "identifier": "Privacy Notice History URL",
+          "label": "Notice History URL",
+          "comment": "The URL where users can view old versios of the privacy notice.",
+          "schema": {
+            "type": "string",
+            "format": "uri" } },
+        { "identifier": "Date",
+          "label": "Privacy Notice Date",
+          "comment": "The date of the last update to the privacy notice.",
+          "schema": {
+            "type": "string",
+            "format": "date-time" } } ] },
+    { "section": "Collection",
+      "inputs": [
+        { "identifier": "Names",
+          "label": "Collect Names?",
+          "comment": "Does the website collect the first or last names of users?",
+          "schema": {
+            "type": "boolean" } },
+        { "identifier": "Physical Addresses",
+          "label": "Collect Physical Addresses?",
+          "comment": "Does the website collect home or other physical addresses, with street name and city or town name?",
+          "schema": {
+            "type": "boolean" } },
+        { "identifier": "E-Mail Addresses",
+          "label": "Collect E-Mail Addresses?",
+          "comment": "Does the website collect e-mail addresses?",
+          "schema": {
+            "type": "boolean" } },
+        { "identifier": "Telephone Numbers",
+          "label": "Collect Telephone Numbers?",
+          "comment": "Does the website collect telephone numbers?",
+          "schema": {
+            "type": "boolean" } },
+        { "identifier": "Social Security Numbers",
+          "label": "Collect Social Security Numbers?",
+          "comment": "Does the website collect social security numbers?",
+          "schema": {
+            "type": "boolean" } },
+        { "identifier": "Other Identifiers",
+          "label": "Collect Other Identifiers?",
+          "comment": "Does the website collect other information that could be used to contact specific individuals online or offline?",
+          "schema": {
+            "type": "string",
+            "pattern": "^[\\x20-\\x7E]+$",
+            "minLength": 1 } },
+        { "identifier": "Combined Information",
+          "label": "Collect Combined Information?",
+          "comment": "Does the website collect other information about users that is stored with or combined with other personal information about them?",
+          "schema": {
+            "type": "string",
+            "pattern": "^[\\x20-\\x7E]+$",
+            "minLength": 1 } },
+        { "identifier": "Collects Personally Identifiable Information",
+          "derivation": {
+            "or": [
+              "Names", "Addresses", "E-Mail Addresses",
+              "Telephone Numbers", "Social Security Numbers",
+              "Other Identifiers", "Combined Information" ] } } ] } ] }

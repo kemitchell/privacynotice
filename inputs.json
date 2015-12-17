@@ -79,4 +79,22 @@
           "or": [
             "Names", "Addresses", "E-Mail Addresses",
             "Telephone Numbers", "Social Security Numbers",
+            "Other Identifiers", "Combined Information" ] } } ] },
+  { "section": "Sharing",
+    "inputs": [
+      { "identifier": "Names",
+        "label": "Collect Names?",
+        "comment": "Does the website collect the first or last names of users?",
+        "schema": {
+          "type": "boolean" } },
+      { "identifier": "Physical Addresses",
+        "label": "Collect Physical Addresses?",
+        "comment": "Does the website collect home or other physical addresses, with street name and city or town name?",
+        "schema": {
+          "type": "boolean" } },
+      { "identifier": "Shares Personally Identifiable Information",
+        "derivation": {
+          "or": [
+            "Names", "Addresses", "E-Mail Addresses",
+            "Telephone Numbers", "Social Security Numbers",
             "Other Identifiers", "Combined Information" ] } } ] } ]

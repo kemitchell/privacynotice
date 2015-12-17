@@ -46,4 +46,17 @@
           { "condition": "Combined Information",
             "form": {
               "content": [
-                { "insert": "Combined Information" } ] } } ] } } ] }
+                { "insert": "Combined Information" } ] } } ] } },
+    { "comment": "See California Business and Professions Code 22575(b)(1)",
+      "condition": "Shares Personally Identifiable Information",
+      "heading": "Third Parties the Website Shares Information",
+      "form": {
+        "content": [
+          "The website may share personally identifiable information with:",
+          { "condition": "Hosting Providers",
+            "form": {
+              "content": [ "users' names" ] } },
+          { "condition": "Other Third Parties",
+            "form": {
+              "content": [
+                { "insert": "Other Third Parties" } ] } } ] } } ] }
